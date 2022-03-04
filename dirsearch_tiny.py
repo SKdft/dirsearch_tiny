@@ -5,9 +5,13 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 class Program(object):
-    def __init__(self):
+    def __init__(self,url):
+        self.url = url
 
+        from lib.controller.controller import Controller
+        con = Controller()
+        con.run()
 
 
 if __name__ == "__main__":
-    main = Program()
+    main = Program("http://xinwen.eastday.com/a/")
