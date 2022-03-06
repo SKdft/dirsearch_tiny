@@ -14,4 +14,4 @@ class Program(object):
 
 
 if __name__ == "__main__":
-    main = Program("http://xinwen.eastday.com/a/")
+    main = Program("http://180.101.49.11:80/")

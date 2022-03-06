@@ -13,7 +13,7 @@ class Controller(object):
     def run(self):
         # while not self.targets.empty():
         #     url = self.targets.get()
-        url = "http://xinwen.eastday.com/a/"
+        url = "http://180.101.49.11:80/"
         self.requester = Requester(
             url
         )
@@ -27,4 +27,4 @@ class Controller(object):
         prepare.url = url
 
         r = self.requester.send(prepare)
-        print(r)
+        print(r.content)
