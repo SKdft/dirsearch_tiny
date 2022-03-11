@@ -1,6 +1,7 @@
 from collections import OrderedDict
 from thirdparty import requests
 from thirdparty.requests.adapters import HTTPAdapter
+from thirdparty.requests.exceptions import InvalidSchema
 
 __attrs__ = [
     'headers', 'cookies', 'auth', 'proxies', 'hooks', 'params', 'verify',
@@ -29,8 +30,7 @@ class Requester(object):
 
             if url.lower().startswith(prefix.lower()):
                 return adapter
-            return adapter
-        #raise InvalidSchema("No connection adapters were found for {!r}".format(url))
+        raise InvalidSchema("No connection adapters were found for {!r}".format(url))
 
     def mount(self, prefix, adapter):
         """Registers a connection adapter to a prefix.

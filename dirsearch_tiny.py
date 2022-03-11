@@ -10,7 +10,7 @@ class Program(object):
 
         from lib.controller.controller import Controller
         con = Controller()
-        con.run()
+        con.run(self.url)
 
 
 if __name__ == "__main__":
